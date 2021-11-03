@@ -25,11 +25,22 @@ void Pila::apilar(Cliente c){
     pnodo nuevo=new NodoPila(c,cima);
     cima=nuevo;
 }
+/*desapilar()-> desapilar la cima de la pila*/
+void Pila::desapilar(){
+    pnodo aux;
+    if (cima){
+        aux=cima;
+        cima=aux->siguiente;
+        delete aux;
+    }
+
+}
 /*insertarCliente(Cliente c)->  inserta en la pila a un cliente,
                     Si registrado==T -> se apila en la cima de la pila
                     Si registrado==F ->se coloca por debajo de los registrados en la pila
                     Se comprueba que la id del cliente sea correcta */
 void Pila::insertarCliente(Cliente c){
+    Pila aux;
     if (!c.comprobarId()){
         cout<<"\nLa identificación del cliente no es válida o no corresponde con el tipo de cliente"<<endl;
     }
@@ -37,13 +48,17 @@ void Pila::insertarCliente(Cliente c){
         apilar(c);
     }
     else{
-        do{
-            if(!cima->cliente.registrado){ //Apila si el primero de la pila es un no registrado
-                apilar(c);
-            }
+        if(!cima->cliente.registrado){ //Apila si el primero de la pila es un no registrado
+            apilar(c);
         }
         while(cima->cliente.registrado){
-
+            aux.apilar(cima->cliente);
+            desapilar();  
+        }
+        apilar(c);
+        while(!aux.esVacia()){
+            apilar(aux.cima->cliente);
+            aux.desapilar();
         }
     }
 }

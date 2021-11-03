@@ -14,6 +14,7 @@ public:
     ~Pila();
     bool esVacia();
     void apilar(Cliente c);
+    void desapilar();
     pnodo getCima();
     Pila invertir();
     void insertarCliente(Cliente c);
