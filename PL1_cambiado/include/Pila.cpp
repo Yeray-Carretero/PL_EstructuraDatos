@@ -6,7 +6,7 @@
 using namespace std;
 //Constructor
 Pila::Pila(){
-    pnodo cima=NULL;
+    cima=NULL;
 }
 //Destructor
 Pila::~Pila(){}

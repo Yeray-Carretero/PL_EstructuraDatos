@@ -11,6 +11,7 @@ private:
         Cliente cliente;
         NodoPila *siguiente;
         friend class Pila;
+        friend class Cola;
     public:
         NodoPila();
         NodoPila(Cliente c, NodoPila *sig=NULL);

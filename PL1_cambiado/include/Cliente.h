@@ -10,6 +10,7 @@ class Cliente{
         string id;
         Entrada entrada;
         friend class Pila;
+        friend class Cola;
     public:
         Cliente();
         Cliente(bool registrado, int llegada, string id,Entrada entrada);
