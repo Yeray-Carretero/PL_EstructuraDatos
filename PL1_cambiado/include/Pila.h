@@ -14,10 +14,15 @@ public:
     ~Pila();
     bool esVacia();
     void apilar(Cliente c);
+    void desapilar();
     pnodo getCima();
-    Pila invertir();
+    //void duplicar(Pila aux);
+    void invertir(Pila inversa);
     void insertarCliente(Cliente c);
     void mostrarPila();
+    void mostrarRegistrados();
+    void mostrarNoRegistrados();
+    void borrarPila();
 };
 #endif
 
