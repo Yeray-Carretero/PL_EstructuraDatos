@@ -62,13 +62,65 @@ void Pila::insertarCliente(Cliente c){
         }
     }
 }
+/*Duplicar(Pila)->  Duplica la pila sin destruir la primera
+                    La pila que se introduce como parámetro es donde se copia la pila que llama a la funcion
+void Pila::duplicar(Pila aux){
+    pnodo p_aux;
+    p_aux=cima;
+    while(p_aux!=NULL){
+        aux.apilar(p_aux->cliente);
+        p_aux=p_aux->siguiente;
+    }
+}*/
 
 
+//invertir(Pila)-> Invierte la pila en la que se introduce como parámetro
+void Pila::invertir(Pila aux){
+    pnodo p_aux;
+    p_aux=cima;
+    while(p_aux!=NULL){
+        aux.apilar(p_aux->cliente);
+        p_aux=p_aux->siguiente;
+    }
+}
 
-
-Pila Pila::invertir(){
+/*mostrarPila()-> Imprime por pantalla todos los clientes almacenados en la pila*/
+void Pila::mostrarPila(){
+    cout<<"\nLos clientes son:\n";
+    pnodo p_aux;
+    p_aux=cima;
+    while(p_aux!=NULL){
+        cout<<"\n"<<p_aux->cliente.id<<endl;
+        p_aux=p_aux->siguiente;
+    }
+}
+/*mostrarRegistrados()->    Muestra por pantalla los clientes registrados*/
+void Pila::mostrarRegistrados(){
+    cout<<"\nLos clientes registrados son:\n";
+    pnodo p_aux;
+    p_aux=cima;
+    while (p_aux && p_aux->cliente.registrado)
+    {
+        cout<<"\n"<<p_aux->cliente.id<<endl;
+        p_aux=p_aux->siguiente;
+    }
+    
+}
+/*mostrarNoRegistrado()->   Muestra por pantalla los clientes no registrados*/
+void Pila::mostrarNoRegistrados(){
+    cout<<"\nLos clientes no registrados son:\n";
+    pnodo p_aux;
     Pila aux;
-    while(!esVacia()){
-        
+    invertir(aux);
+    p_aux=aux.cima;
+    while(p_aux){
+        cout<<"\n"<<p_aux->cliente.id<<endl;
+        p_aux=p_aux->siguiente;
+    }
+}
+/*borrarPila()  ->  borra todos los clientes de la pila y la deja vacía*/
+void Pila::borrarPila(){
+    while(cima){
+        desapilar();
     }
 }
