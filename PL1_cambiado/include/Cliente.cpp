@@ -14,11 +14,19 @@ Cliente::Cliente(){
     entrada=Entrada();
     
 }
-Cliente::Cliente(bool er, int l, string id, Entrada e){
+//Constructor con entrada
+Cliente::Cliente(bool er, int lleg, string id, Entrada e){
     registrado=er;
-    llegada=l;
+    llegada=lleg;
     this->id=id;
     entrada=e;
+}
+//Constructor sin entrada
+Cliente::Cliente(bool er, int lleg, string id){
+    registrado=er;
+    llegada=lleg;
+    this->id=id;
+    entrada=Entrada();
 }
 //Destructor
 Cliente::~Cliente(){}

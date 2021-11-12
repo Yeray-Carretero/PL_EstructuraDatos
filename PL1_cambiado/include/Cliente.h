@@ -11,9 +11,11 @@ class Cliente{
         Entrada entrada;
         friend class Pila;
         friend class Cola;
+        friend class Lista;
     public:
         Cliente();
         Cliente(bool registrado, int llegada, string id,Entrada entrada);
+        Cliente(bool registrado, int llegada, string id);
         ~Cliente();
         void cambiarTipo();
         void agregarEntrada(string tipo,string id);
