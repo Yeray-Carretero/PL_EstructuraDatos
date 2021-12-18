@@ -7,7 +7,7 @@
 using namespace std;
 
 
-ABB::ABB() //crea árbol vacío
+ABB::ABB() //crea Ã¡rbol vacÃ­o
 {
     //ctor
     raiz=NULL;
@@ -17,7 +17,7 @@ ABB::ABB(NodoABB *r)
     raiz=r;
 
 }
-ABB::ABB(string id,bool registro, NodoABB *hIz, NodoABB *hDer)//constructor que crea árbolBin con dato y dos subárboles
+ABB::ABB(string id,bool registro, NodoABB *hIz, NodoABB *hDer)//constructor que crea Ã¡rbolBin con dato y dos subÃ¡rboles
 {
     raiz= new NodoABB(id,registro, hIz, hDer);//llamamos al constructor del Nodo y raiz es un puntero al Nodo creado
 
@@ -28,7 +28,7 @@ ABB::~ABB()
     //dtor
 }
 void ABB::verInOrden() { verInOrden(raiz);}//Metodo auxiliar a verInOrden que nos permite inicilizar el valor del nodo
-void ABB::verInOrden(NodoABB *nodoaux)// Método para ver Arbol empezando por su izquierda, después pasamos por la raiz y por ultimo por la rama derecha
+void ABB::verInOrden(NodoABB *nodoaux)// MÃ©todo para ver Arbol empezando por su izquierda, despuÃ©s pasamos por la raiz y por ultimo por la rama derecha
 {
     if (nodoaux) {
        verInOrden(nodoaux->hi);
@@ -67,7 +67,7 @@ void ABB::insertar(Cliente c)
     }
 
 }
-void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este método insertamos un cliente en el ABB para que siga ordenado
+void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este mÃ©todo insertamos un cliente en el ABB para que siga ordenado
 {
     if (nodoaux == NULL)
     {
@@ -79,13 +79,12 @@ void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este método insertamos un cli
 
 
         if ((nodoaux->id>c.id) || (nodoaux->id ==c.id))
-            //((nombre.compare(nodo->nombre)==0) ||  (nombre.compare(nodo->nombre)<0)) usando funcion de string
 
 
-             { //Si el nombre del cliente es menor o igual al del nodo  raíz entoces comprobamos...
+             { //Si el id del cliente es menor o igual al del nodo  raÃ­z entoces comprobamos...
 
 
-            if (nodoaux->hi == NULL)//Si el nodo izquierdo está vacio entoces
+            if (nodoaux->hi == NULL)//Si el nodo izquierdo estÃ¡ vacio entoces
             {
                 //creo un objeto NodoABB para insertarlo en el ABB
             NodoABB *nuevo=new NodoABB(c);
@@ -96,10 +95,10 @@ void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este método insertamos un cli
             else//En caso de que el nodo no estuviera vacio
             {
 
-                insertar(c, nodoaux->hi);//insertamos al pasajero en el nodo izquierdo
+                insertar(c, nodoaux->hi);//insertamos al clienteen el nodo izquierdo
             }
         }
-        else// Si el nombre es > que el nodo
+        else// Si el id del cliente es mayor queel del nodo
         {
 
             if (nodoaux->hd == NULL)//Comprobamos si el derecho no existe
@@ -112,7 +111,7 @@ void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este método insertamos un cli
 
             else//si existe
             {
-                insertar(c, nodoaux->hd);// insertamos el pasajero al nodo derecho
+                insertar(c, nodoaux->hd);// insertamos el clienteen el nodo derecho
             }
         }
     }
