@@ -46,8 +46,8 @@ void ABB::verPreorden(){ verPreorden(raiz);}
 void ABB::verPreorden(NodoABB *nodoaux){
     if(nodoaux){
         cout << nodoaux->id <<endl;
-        preOrden(nodoaux->izq);
-        preOrden(nodoaux->der);
+        preOrden(nodoaux->hi);
+        preOrden(nodoaux->hd);
      }
 }
 
