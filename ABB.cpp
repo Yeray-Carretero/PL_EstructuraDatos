@@ -69,14 +69,13 @@ void ABB::insertar(Cliente c)
 }
 void ABB::insertar(Cliente c,NodoABB *nodoaux)//En este método insertamos un cliente en el ABB para que siga ordenado
 {
-    if (nodoaux == NULL)
+    if (nodoaux == NULL)//Como se nos pide que ingresemos los datos dependiendo del tipo de registro nos aseguramos que los hijos de la raiz $$$ estan ocupados 
+                        //y si no insertamos
     {
         NodoABB *nuevo = new NodoABB(c);
         nodoaux = nuevo;
     }
     else{
-
-
 
         if ((nodoaux->id>c.id) || (nodoaux->id ==c.id))
 
