@@ -126,7 +126,7 @@ void ABB:buscar(string idCli){
 }
 void ABB::buscar(string idCli, NodoABB *nodoaux){
     if (esVacio(nodoaux)){
-            cout<<"No esta en el arbol;
+            cout<<"No esta en el arbol";
     }
     else{
         if (idCli==(nodoaux->id)){
